@@ -188,13 +188,25 @@ def grade(state: AgentState) -> AgentState:
       none         근거가 질문과 무관하거나 아예 없다   → 거절
     판정은 LLM 이 하되(GRADE 프롬프트 + Grade 스키마), 근거 밖 지식과 근거 안의 지시문은 쓰지 않는다.
     """
-    # ── TODO: 여기를 채우세요 ──────────────────────────────
-    # 요구사항은 tests/test_agent.py 의 grade 테스트 4개가 정한다. 재료는 이 파일 위에 다 있다.
-    #   GRADE(프롬프트) · Grade(스키마) · _context(hits) · get_llm("grade", size="small") · is_fake · policy()["retrieval"]["min_context_chars"]
-    # 돌려줄 것: {"grade": "sufficient" | "insufficient" | "none", "trace": state.get("trace", []) + ["grade"]}
-    # 생각할 것 셋. 근거가 하나도 없을 때 LLM 을 부를 이유가 있는가. 키가 없을 때(is_fake) 무엇으로 판정할 것인가.
-    # LLM 호출이 실패하면 어느 쪽으로 기울 것인가 — 근거가 있는데 "none" 으로 보내면 거절이고, 그것이 오거절이다.
-    raise NotImplementedError("TODO: grade 를 구현하세요")
+    trace = state.get("trace", []) + ["grade"]
+    hits = state.get("hits") or []
+    if not hits:
+        return {"grade": "none", "trace": trace}      # 근거가 없으면 판정할 것도 없다
+
+    llm = get_llm("grade", size="small")
+    if is_fake(llm):
+        # 키가 없으면 판단 대신 분량만 본다. 자리 채우기다.
+        chars = sum(len(h.get("text", "")) for h in hits)
+        verdict = "sufficient" if chars >= policy()["retrieval"]["min_context_chars"] else "insufficient"
+        return {"grade": verdict, "trace": trace}
+
+    try:
+        out = (GRADE | llm.with_structured_output(Grade, method="json_schema")).invoke(
+            {"question": state["masked_question"], "context": _context(hits)})
+        verdict = out["verdict"] if isinstance(out, dict) else out.verdict
+    except Exception:
+        verdict = "insufficient"                       # 근거가 있는데 none 으로 보내면 오거절이다
+    return {"grade": verdict, "trace": trace}
 
 
 def route_after_grade(state: AgentState) -> Literal["answer", "retry", "abstain"]:
@@ -203,12 +215,13 @@ def route_after_grade(state: AgentState) -> Literal["answer", "retry", "abstain"
     재검색 상한(settings.max_retries)을 여기서 지킨다. 상한이 없으면 근거가 없는 질문에서
     루프가 끝나지 않는다. 3회차 노트북의 route_after_grade 와 같은 자리이고, 분기가 둘에서 셋이 됐다.
     """
-    # ── TODO: 여기를 채우세요 ──────────────────────────────
-    # 요구사항은 tests/test_agent.py 의 route 테스트 5개가 정한다. "answer" | "retry" | "abstain" 중 하나를 돌려준다.
-    # 상한은 get_settings().max_retries, 지금까지 횟수는 state.get("retry_count", 0).
-    # 생각할 것 둘. none 을 재검색하면 어떤 질문에서 무슨 일이 생기는가.
-    # insufficient 가 상한에 닿으면 거절인가, 한계를 밝힌 답변인가 — docs/adr/ADR-004-agent-policy.md 가 정했다.
-    raise NotImplementedError("TODO: route_after_grade 를 구현하세요")
+    g = state.get("grade")
+    if g == "sufficient":
+        return "answer"
+    if g == "insufficient":
+        # 상한 안이면 재검색, 상한에 닿으면 거절이 아니라 한계를 밝힌 답변 (ADR-004)
+        return "retry" if state.get("retry_count", 0) < get_settings().max_retries else "answer"
+    return "abstain"                                   # none 이거나 판정이 없으면 재검색해도 없다
 
 
 def bump_retry(state: AgentState) -> AgentState:

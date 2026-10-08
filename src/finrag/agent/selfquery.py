@@ -34,9 +34,12 @@ def extract_filters(question: str) -> QueryFilters:
     LLM 에게 QueryFilters 스키마를 채우게 한다. 모르는 칸은 비워 둔다(추측 금지).
     Qdrant Filter 로 바꾸는 일(to_qdrant)과 0건일 때 푸는 일(relax)은 filters.py 가 한다.
     """
-    # ── TODO: 여기를 채우세요 ──────────────────────────────
-    # 요구사항은 tests/test_agent.py 의 selfquery 테스트 4개가 정한다. 재료는 이 파일 위에 있다.
-    #   PROMPT · QueryFilters(retrieval/filters.py) · get_llm("selfquery", size="small") · is_fake · llm.with_structured_output(QueryFilters, method="json_schema")
-    # 돌려줄 것: QueryFilters. 모델이 dict 를 돌려줄 수도 있다.
-    # 생각할 것: 키가 없거나 호출이 실패했을 때 무엇을 돌려주는 것이 덜 나쁜가. 빈 필터는 "필터 없이 검색"이고, 잘못 만든 필터는 "조용히 0건"이다.
-    raise NotImplementedError("TODO: extract_filters 를 구현하세요")
+    llm = get_llm("selfquery", size="small")
+    if is_fake(llm):
+        return QueryFilters()                          # 필터 없이 검색이 조용히 0건보다 낫다
+    try:
+        out = (PROMPT | llm.with_structured_output(QueryFilters, method="json_schema")).invoke(
+            {"question": question})
+        return out if isinstance(out, QueryFilters) else QueryFilters(**(out or {}))
+    except Exception:
+        return QueryFilters()

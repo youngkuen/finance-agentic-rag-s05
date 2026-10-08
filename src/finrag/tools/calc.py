@@ -76,14 +76,58 @@ def savings_early_termination_rate(
     구간표의 첫 행이 산식이 아니라 고정값인 경우가 많다(농협 '3개월 미만 0.1%').
     그때는 fixed_rate_pct 로 받는다. 산식을 억지로 적용하면 틀린다.
     """
-    # ── TODO: 여기를 채우세요 ──────────────────────────────
-    # 요구사항은 tests/test_calc_golden.py 의 test_c01 · test_c02 · test_c03 이 정한다. 산식 셋은 위 독스트링에 있다.
-    # 재료: trunc_rate(x, precision) · CalcResult(value, unit, steps, rules, warnings, abstain_reason) · _missing(("이름", 값), …) · math.floor / math.ceil
-    # 생각할 것 넷. 구간표 첫 행이 고정값(fixed_rate_pct)이면 산식을 돌릴 이유가 있는가.
-    # 적용률(ratio) 대신 차감률(deduction_pct)이 오면 곱하는 수는 무엇인가. 월 미만 처리(month_rule)는 floor 와 ceil 중 무엇인가 — 은행마다 반대다.
-    # 산출값이 최저보장(min_rate_pct)보다 작으면 무엇이 답이고, 그 사실을 어디(warnings · steps)에 남길 것인가.
-    # steps 에는 사람이 검산할 수 있게 계산 과정을 문장으로 남긴다. 답변 노드가 그대로 인용한다.
-    raise NotImplementedError("TODO: savings_early_termination_rate 를 구현하세요")
+    rules = {"rate_precision": rate_precision, "month_rule": month_rule, "min_rate_pct": min_rate_pct}
+    steps: list[str] = []
+    warnings: list[str] = []
+
+    # 구간표 첫 행이 고정값이면 산식을 돌리지 않는다.
+    if fixed_rate_pct is not None:
+        value = max(fixed_rate_pct, min_rate_pct)
+        steps.append(f"해당 구간은 산식이 아니라 고정이율 {fixed_rate_pct}% 를 적용합니다")
+        if value != fixed_rate_pct:
+            warnings.append(f"고정이율 {fixed_rate_pct}% 가 최저보장 {min_rate_pct}% 보다 작아 최저보장을 적용했습니다")
+            steps.append(f"최저보장 {min_rate_pct}% 적용 → {value}%")
+        return CalcResult(value, "%", steps, {**rules, "form": "fixed"}, warnings)
+
+    if base_rate_pct is None:
+        return CalcResult(None, "%", rules=rules,
+                          abstain_reason="기본이율(기준이율)을 문서에서 찾지 못했습니다. 개별 상품 확인이 필요합니다.")
+
+    # 곱하는 수: 적용률(형태 B·C) 또는 1 − 차감률(형태 A)
+    if ratio is not None:
+        mult, mult_label, form = ratio, f"적용률 {ratio:.0%}", "B/C"
+    elif deduction_pct is not None:
+        mult = 1 - deduction_pct / 100
+        mult_label, form = f"(1 − 차감률 {deduction_pct}%)", "A"
+    else:
+        return CalcResult(None, "%", rules=rules,
+                          abstain_reason="적용률·차감률·고정이율 중 어느 것도 문서에서 찾지 못했습니다.")
+
+    # 기간 비율: 일할(형태 C)이 있으면 일수, 아니면 월수
+    if days_elapsed is not None and days_contract:
+        period, period_label = days_elapsed / days_contract, f"{days_elapsed}일/{days_contract}일"
+        form = "C" if form != "A" else form
+    elif months_elapsed is not None and months_contract:
+        m = math.floor(months_elapsed + 1e-9) if month_rule == "floor" else math.ceil(months_elapsed - 1e-9)
+        if m != months_elapsed:
+            steps.append(f"경과월수 {months_elapsed} → 월 미만 {'버림' if month_rule == 'floor' else '절상'} {m}개월")
+        period, period_label = m / months_contract, f"{m}개월/{months_contract}개월"
+        form = "B" if form == "B/C" else form
+    else:
+        missing = _missing(("경과기간", days_elapsed if days_elapsed is not None else months_elapsed),
+                           ("계약기간", days_contract or months_contract))
+        return CalcResult(None, "%", rules=rules,
+                          abstain_reason=f"{', '.join(missing) or '기간'} 을(를) 문서·질문에서 찾지 못했습니다.")
+
+    raw = base_rate_pct * mult * period
+    value = trunc_rate(raw, rate_precision)
+    steps.append(f"{base_rate_pct}% × {mult_label} × {period_label} = {raw:.6f}%")
+    steps.append(f"소수 {rate_precision}째 자리까지 (아래 절사) → {value}%")
+    if value < min_rate_pct:
+        warnings.append(f"산출 이율 {value}% 가 최저보장 {min_rate_pct}% 보다 작아 최저보장을 적용했습니다")
+        steps.append(f"최저보장 {min_rate_pct}% 적용 → {min_rate_pct}%")
+        value = min_rate_pct
+    return CalcResult(value, "%", steps, {**rules, "form": form}, warnings)
 
 
 def savings_maturity_interest(
