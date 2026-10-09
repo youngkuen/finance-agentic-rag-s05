@@ -1,0 +1,2104 @@
+{
+ "pipeline": "agentic",
+ "generated_at": "2026-10-09T14:30:30+00:00",
+ "n": 40,
+ "llm": "fake",
+ "overall": {
+  "recall@1": 0.4,
+  "recall@3": 0.5,
+  "recall@5": 0.525,
+  "recall@10": 0.55,
+  "mrr": 0.4544,
+  "n": 40,
+  "answer_rate": 1.0,
+  "false_refusal_rate": 0.0,
+  "abstain_accuracy": 0.0,
+  "latency_ms_avg": 18177.7,
+  "latency_ms_p95": 23841.2
+ },
+ "by_type": {
+  "계산형": {
+   "recall@1": 0.8,
+   "recall@3": 0.8,
+   "recall@5": 0.8,
+   "recall@10": 0.8,
+   "mrr": 0.8,
+   "n": 5,
+   "answer_rate": 1.0,
+   "false_refusal_rate": 0.0,
+   "latency_ms_avg": 9739.2,
+   "latency_ms_p95": 10231.6
+  },
+  "메타데이터형": {
+   "recall@1": 0.0,
+   "recall@3": 0.2,
+   "recall@5": 0.2,
+   "recall@10": 0.2,
+   "mrr": 0.1,
+   "n": 5,
+   "answer_rate": 1.0,
+   "false_refusal_rate": 0.0,
+   "latency_ms_avg": 10623.5,
+   "latency_ms_p95": 11455.8
+  },
+  "미답변형": {
+   "recall@1": 0.0,
+   "recall@3": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0,
+   "mrr": 0.0,
+   "n": 2,
+   "answer_rate": 1.0,
+   "abstain_accuracy": 0.0,
+   "latency_ms_avg": 9656.5,
+   "latency_ms_p95": 9375.5
+  },
+  "복합형": {
+   "recall@1": 0.2,
+   "recall@3": 0.2,
+   "recall@5": 0.2,
+   "recall@10": 0.4,
+   "mrr": 0.2286,
+   "n": 5,
+   "answer_rate": 1.0,
+   "false_refusal_rate": 0.0,
+   "latency_ms_avg": 10361.5,
+   "latency_ms_p95": 10420.5
+  },
+  "상품명조건형": {
+   "recall@1": 0.5,
+   "recall@3": 0.5,
+   "recall@5": 0.5,
+   "recall@10": 0.5,
+   "mrr": 0.5,
+   "n": 6,
+   "answer_rate": 1.0,
+   "false_refusal_rate": 0.0,
+   "latency_ms_avg": 11604.9,
+   "latency_ms_p95": 11787.4
+  },
+  "유사상품비교형": {
+   "recall@1": 0.6667,
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr": 0.7778,
+   "n": 3,
+   "answer_rate": 1.0,
+   "false_refusal_rate": 0.0,
+   "latency_ms_avg": 9411.5,
+   "latency_ms_p95": 9361.6
+  },
+  "조항번호형": {
+   "recall@1": 0.375,
+   "recall@3": 0.375,
+   "recall@5": 0.5,
+   "recall@10": 0.5,
+   "mrr": 0.4,
+   "n": 8,
+   "answer_rate": 1.0,
+   "false_refusal_rate": 0.0,
+   "latency_ms_avg": 49315.9,
+   "latency_ms_p95": 25007.8
+  },
+  "표수치형": {
+   "recall@1": 0.5,
+   "recall@3": 0.8333,
+   "recall@5": 0.8333,
+   "recall@10": 0.8333,
+   "mrr": 0.6667,
+   "n": 6,
+   "answer_rate": 1.0,
+   "false_refusal_rate": 0.0,
+   "latency_ms_avg": 10296.9,
+   "latency_ms_p95": 10337.1
+  }
+ },
+ "rows": [
+  {
+   "id": "S01",
+   "type": "조항번호형",
+   "answerable": true,
+   "n_gold": 2,
+   "n_retrieved": 8,
+   "mrr": 1.0,
+   "latency_ms": 271040.7,
+   "top_chunk": "hanacard_std_2017#제31조#1",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "hanacard_std_2017#제31조#1",
+    "sc_card_std_2021#제31조#1",
+    "hanacard_std_2017#제32조#1",
+    "sc_card_std_2021#제32조#1",
+    "sc_card_std_2021#제35조#1",
+    "hanacard_std_2017#제35조#1",
+    "hanacard_std_2017#제33조#1",
+    "sc_card_std_2021#제33조#1"
+   ],
+   "recall@1": 1.0,
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0
+  },
+  {
+   "id": "S02",
+   "type": "조항번호형",
+   "answerable": true,
+   "n_gold": 1,
+   "n_retrieved": 8,
+   "mrr": 0.0,
+   "latency_ms": 20538.3,
+   "top_chunk": "law_silson_std_pdf#제34조#6",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요.",
+    "계산 파라미터 추출은 LLM 키가 필요합니다."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "law_silson_std_pdf#제34조#6",
+    "sonsa_silson_std_2024#제34조#2",
+    "law_silson_std_pdf#제34조#7",
+    "sf_silson_2605#제35조#3",
+    "law_silson_std_pdf#제32조#1",
+    "law_silson_std_pdf#제34조#5",
+    "law_silson_std_pdf#제34조#4",
+    "sf_silson_2605#제34조#2"
+   ],
+   "recall@1": 0.0,
+   "recall@3": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0
+  },
+  {
+   "id": "S03",
+   "type": "조항번호형",
+   "answerable": true,
+   "n_gold": 2,
+   "n_retrieved": 8,
+   "mrr": 0.2,
+   "latency_ms": 23841.2,
+   "top_chunk": "hana_credit_terms_2024#제7조#3",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "hana_credit_terms_2024#제7조#3",
+    "sc_card_std_2021#제29조#2",
+    "hana_credit_terms_2024_table#제7조#1",
+    "hana_credit_terms_2024#제8조#1",
+    "hana_credit_terms_2024#제7조#1",
+    "hana_credit_terms_2024#제7조#2",
+    "hana_credit_terms_2013#제8조#1",
+    "hana_credit_terms_2009#제8조#1"
+   ],
+   "recall@1": 0.0,
+   "recall@3": 0.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0
+  },
+  {
+   "id": "S04",
+   "type": "조항번호형",
+   "answerable": true,
+   "n_gold": 1,
+   "n_retrieved": 8,
+   "mrr": 0.0,
+   "latency_ms": 25007.8,
+   "top_chunk": "shinhan_orakssil_2025#본문#7",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "shinhan_orakssil_2025#본문#7",
+    "woorisb_rotating_html#본문#4",
+    "nh_jangbyeong_2026#본문#5",
+    "shinhan_orakssil_2025#본문#4",
+    "nh_jangbyeong_2026#본문#11",
+    "hana_credit_terms_2024#제12조#1",
+    "woorisb_rotating_html#본문#3",
+    "law_insurance_act_xml#제108조#1"
+   ],
+   "recall@1": 0.0,
+   "recall@3": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0
+  },
+  {
+   "id": "S05",
+   "type": "조항번호형",
+   "answerable": true,
+   "n_gold": 1,
+   "n_retrieved": 8,
+   "mrr": 0.0,
+   "latency_ms": 14544.0,
+   "top_chunk": "hana_credit_terms_2024#제4조의2#1",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "hana_credit_terms_2024#제4조의2#1",
+    "sf_realestate_loan_2026#본문#8",
+    "hana_credit_terms_2024#본문#1",
+    "hanacard_std_2017#제24조#1",
+    "im_household_2025#본문#10",
+    "knia_7000#제2조#2",
+    "im_household_2025#본문#17",
+    "knia_18259#제7조#2"
+   ],
+   "recall@1": 0.0,
+   "recall@3": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0
+  },
+  {
+   "id": "S06",
+   "type": "조항번호형",
+   "answerable": true,
+   "n_gold": 2,
+   "n_retrieved": 8,
+   "mrr": 1.0,
+   "latency_ms": 12422.7,
+   "top_chunk": "knia_18259#제7조#2",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "knia_18259#제7조#2",
+    "law_silson_std_pdf#제17조#6",
+    "sonsa_silson_std_2024#제17조#1",
+    "law_silson_std_pdf#제17조#5",
+    "law_silson_std_pdf#제17조#1",
+    "law_silson_std_pdf#제19조#4",
+    "knia_18259#제22조#5",
+    "law_silson_std_pdf#제29조#1"
+   ],
+   "recall@1": 1.0,
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0
+  },
+  {
+   "id": "S07",
+   "type": "조항번호형",
+   "answerable": true,
+   "n_gold": 2,
+   "n_retrieved": 8,
+   "mrr": 0.0,
+   "latency_ms": 14495.1,
+   "top_chunk": "law_silson_std_pdf#제15조#6",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "law_silson_std_pdf#제15조#6",
+    "law_silson_std_pdf#제15조#7",
+    "sonsa_silson_std_2024#제15조#1",
+    "sf_silson_2605#제3조#33",
+    "sonsa_silson_std_2024#제8조#1",
+    "law_silson_std_pdf#제5조#19",
+    "sf_silson_2605#제3조#7",
+    "db_silson_2101#제3조의4#15"
+   ],
+   "recall@1": 0.0,
+   "recall@3": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0
+  },
+  {
+   "id": "S08",
+   "type": "조항번호형",
+   "answerable": true,
+   "n_gold": 1,
+   "n_retrieved": 8,
+   "mrr": 1.0,
+   "latency_ms": 12637.1,
+   "top_chunk": "law_fcpa_xml#제19조#1",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "law_fcpa_xml#제19조#1",
+    "sf_silson_2605#제19조#5",
+    "law_fcpa_xml#제101조의2#1",
+    "law_insurance_act_xml#제101조의2#2",
+    "law_insurance_act_xml#제101조의2#1",
+    "law_fcpa_xml#제19조#2",
+    "sf_silson_2605#제19조#7",
+    "law_insurance_act_xml#제95조의2#1"
+   ],
+   "recall@1": 1.0,
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0
+  },
+  {
+   "id": "S09",
+   "type": "상품명조건형",
+   "answerable": true,
+   "n_gold": 2,
+   "n_retrieved": 8,
+   "mrr": 1.0,
+   "latency_ms": 12916.0,
+   "top_chunk": "nh_jangbyeong_2026#본문#2",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "nh_jangbyeong_2026#본문#2",
+    "nh_jangbyeong_2026#본문#1",
+    "nh_jangbyeong_2026#본문#5",
+    "nh_jangbyeong_2026#본문#8",
+    "nh_jangbyeong_2026#본문#9",
+    "nh_jangbyeong_2026#본문#10",
+    "nh_jangbyeong_2026#본문#6",
+    "nh_jangbyeong_2026#본문#7"
+   ],
+   "recall@1": 1.0,
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0
+  },
+  {
+   "id": "S10",
+   "type": "상품명조건형",
+   "answerable": true,
+   "n_gold": 1,
+   "n_retrieved": 8,
+   "mrr": 1.0,
+   "latency_ms": 11200.5,
+   "top_chunk": "nh_jangbyeong_2026#본문#2",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "nh_jangbyeong_2026#본문#2",
+    "nh_jangbyeong_2026#본문#6",
+    "nh_jangbyeong_2026#본문#5",
+    "nh_jangbyeong_2026#본문#1",
+    "nh_jangbyeong_2026#본문#8",
+    "nh_jangbyeong_2026#본문#9",
+    "nh_jangbyeong_2026#본문#3",
+    "nh_jangbyeong_2026#본문#10"
+   ],
+   "recall@1": 1.0,
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0
+  },
+  {
+   "id": "S11",
+   "type": "상품명조건형",
+   "answerable": true,
+   "n_gold": 3,
+   "n_retrieved": 8,
+   "mrr": 1.0,
+   "latency_ms": 11787.4,
+   "top_chunk": "shinhan_orakssil_2025#본문#1",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "shinhan_orakssil_2025#본문#1",
+    "shinhan_orakssil_2025#본문#6",
+    "shinhan_orakssil_2025#본문#3",
+    "nh_jangbyeong_2026#본문#3",
+    "shinhan_orakssil_2025#본문#2",
+    "nh_jangbyeong_2026#본문#2",
+    "sonsa_silson_std_2024#제5조#2",
+    "sonsa_silson_std_2024#제5조#1"
+   ],
+   "recall@1": 1.0,
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0
+  },
+  {
+   "id": "S12",
+   "type": "상품명조건형",
+   "answerable": true,
+   "n_gold": 2,
+   "n_retrieved": 8,
+   "mrr": 0.0,
+   "latency_ms": 11696.2,
+   "top_chunk": "woorisb_rotating_html#본문#2",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요.",
+    "계산 파라미터 추출은 LLM 키가 필요합니다."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "woorisb_rotating_html#본문#2",
+    "shinhan_orakssil_2025#본문#1",
+    "nh_jangbyeong_2026#본문#2",
+    "knia_18259#제22조#4",
+    "woorisb_rotating_html#본문#1",
+    "sonsa_silson_std_2024#제5조#2",
+    "knia_18259#제22조#1",
+    "knia_7000#본문#6"
+   ],
+   "recall@1": 0.0,
+   "recall@3": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0
+  },
+  {
+   "id": "S13",
+   "type": "상품명조건형",
+   "answerable": true,
+   "n_gold": 1,
+   "n_retrieved": 8,
+   "mrr": 0.0,
+   "latency_ms": 10310.5,
+   "top_chunk": "knia_7000#제1조#11",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "knia_7000#제1조#11",
+    "sf_silson_2605#제1조#7",
+    "db_silson_2101#제42조#12",
+    "knia_7000#제4조#10",
+    "db_silson_2101#제42조#24",
+    "db_silson_2101#제42조#22",
+    "db_silson_2101#제42조#25",
+    "sf_silson_2605#제10조#6"
+   ],
+   "recall@1": 0.0,
+   "recall@3": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0
+  },
+  {
+   "id": "S14",
+   "type": "상품명조건형",
+   "answerable": true,
+   "n_gold": 1,
+   "n_retrieved": 8,
+   "mrr": 0.0,
+   "latency_ms": 11718.8,
+   "top_chunk": "im_household_2025#본문#2",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요.",
+    "근거 문서의 심의필 유효기간이 지났습니다(2026-09-30). 현행 조건은 다를 수 있습니다.",
+    "계산 파라미터 추출은 LLM 키가 필요합니다."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "im_household_2025#본문#2",
+    "im_household_2025#본문#10",
+    "sf_realestate_loan_2026#본문#5",
+    "im_mortgage_2024#본문#4",
+    "im_mortgage_2024#본문#19",
+    "hana_mortgage_2025#본문#27",
+    "hana_mortgage_2025#본문#5",
+    "sf_realestate_loan_2026#본문#6"
+   ],
+   "recall@1": 0.0,
+   "recall@3": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0
+  },
+  {
+   "id": "S15",
+   "type": "메타데이터형",
+   "answerable": true,
+   "n_gold": 1,
+   "n_retrieved": 8,
+   "mrr": 0.0,
+   "latency_ms": 9965.0,
+   "top_chunk": "hana_credit_terms_2024_table#제7조#2",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "hana_credit_terms_2024_table#제7조#2",
+    "sc_card_std_2021#제29조#1",
+    "hana_credit_terms_2024#제7조#3",
+    "hana_credit_terms_2024#제7조#2",
+    "hana_credit_terms_2024#제7조#1",
+    "hana_credit_terms_2024_table#제7조#1",
+    "hana_credit_terms_2013#제8조#1",
+    "hana_credit_terms_2009#제8조#1"
+   ],
+   "recall@1": 0.0,
+   "recall@3": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0
+  },
+  {
+   "id": "S16",
+   "type": "메타데이터형",
+   "answerable": true,
+   "n_gold": 2,
+   "n_retrieved": 8,
+   "mrr": 0.5,
+   "latency_ms": 9800.4,
+   "top_chunk": "im_household_2025#본문#17",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "im_household_2025#본문#17",
+    "hana_credit_terms_2024#제7조#1",
+    "hanacard_diff_2016#제28조#2",
+    "hana_credit_terms_2009#제7조#1",
+    "hana_credit_terms_2024_table#제7조#2",
+    "sc_card_std_2021#제29조#1",
+    "hana_credit_terms_2024_table#제7조#1",
+    "hanacard_std_2017#제29조#1"
+   ],
+   "recall@1": 0.0,
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0
+  },
+  {
+   "id": "S17",
+   "type": "메타데이터형",
+   "answerable": true,
+   "n_gold": 1,
+   "n_retrieved": 8,
+   "mrr": 0.0,
+   "latency_ms": 10419.4,
+   "top_chunk": "knia_7000#제2조#16",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "knia_7000#제2조#16",
+    "db_silson_2101#제42조#25",
+    "db_silson_2101#제42조#8",
+    "db_silson_2101#제42조#26",
+    "sf_silson_2605#제1조#15",
+    "knia_7000#제4조#10",
+    "db_silson_2101#제42조#12",
+    "sf_silson_2605#제4조#39"
+   ],
+   "recall@1": 0.0,
+   "recall@3": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0
+  },
+  {
+   "id": "S18",
+   "type": "메타데이터형",
+   "answerable": true,
+   "n_gold": 3,
+   "n_retrieved": 8,
+   "mrr": 0.0,
+   "latency_ms": 11476.9,
+   "top_chunk": "woorisb_rotating_html#본문#3",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "woorisb_rotating_html#본문#3",
+    "shinhan_orakssil_2025#본문#3",
+    "woorisb_rotating_html#본문#2",
+    "shinhan_orakssil_2025#본문#7",
+    "woorisb_rotating_html#본문#5",
+    "kbcard_rates_html#본문#1",
+    "woorisb_rotating_html#본문#1",
+    "db_silson_2101#제12조#29"
+   ],
+   "recall@1": 0.0,
+   "recall@3": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0
+  },
+  {
+   "id": "S19",
+   "type": "메타데이터형",
+   "answerable": true,
+   "n_gold": 2,
+   "n_retrieved": 8,
+   "mrr": 0.0,
+   "latency_ms": 11455.8,
+   "top_chunk": "hana_mortgage_2025#본문#34",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "hana_mortgage_2025#본문#34",
+    "hana_mortgage_2025#본문#12",
+    "shinhan_orakssil_2025#본문#1",
+    "hana_mortgage_2025#본문#20",
+    "hana_mortgage_2025#본문#42",
+    "shinhan_orakssil_2025#본문#6",
+    "nh_jangbyeong_2026#본문#1",
+    "shinhan_orakssil_2025#본문#5"
+   ],
+   "recall@1": 0.0,
+   "recall@3": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0
+  },
+  {
+   "id": "S20",
+   "type": "표수치형",
+   "answerable": true,
+   "n_gold": 2,
+   "n_retrieved": 8,
+   "mrr": 0.5,
+   "latency_ms": 10337.1,
+   "top_chunk": "im_mortgage_2024#본문#5",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요.",
+    "근거 문서의 심의필 유효기간이 지났습니다(2026-09-30). 현행 조건은 다를 수 있습니다."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "im_mortgage_2024#본문#5",
+    "im_household_2025#본문#4",
+    "hana_mortgage_2025#본문#28",
+    "im_household_2025#본문#1",
+    "hana_household_loan_2014#본문#5",
+    "sf_realestate_loan_2026#본문#7",
+    "im_household_2025#본문#2",
+    "hana_mortgage_2025#본문#5"
+   ],
+   "recall@1": 0.0,
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0
+  },
+  {
+   "id": "S21",
+   "type": "표수치형",
+   "answerable": true,
+   "n_gold": 2,
+   "n_retrieved": 8,
+   "mrr": 0.0,
+   "latency_ms": 10092.5,
+   "top_chunk": "nh_jangbyeong_2026#본문#4",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "nh_jangbyeong_2026#본문#4",
+    "woorisb_rotating_html#본문#3",
+    "woorisb_rotating_html#본문#2",
+    "shinhan_orakssil_2025#본문#2",
+    "shinhan_orakssil_2025#본문#3",
+    "nh_jangbyeong_2026#본문#3",
+    "woorisb_rotating_html#본문#1",
+    "knia_7000#제12조#3"
+   ],
+   "recall@1": 0.0,
+   "recall@3": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0
+  },
+  {
+   "id": "S22",
+   "type": "표수치형",
+   "answerable": true,
+   "n_gold": 1,
+   "n_retrieved": 8,
+   "mrr": 0.5,
+   "latency_ms": 9906.1,
+   "top_chunk": "kbcard_rates_html#본문#13",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요.",
+    "계산 파라미터 추출은 LLM 키가 필요합니다."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "kbcard_rates_html#본문#13",
+    "kbcard_rates_html#본문#1",
+    "kbcard_rates_html#본문#11",
+    "kbcard_rates_html#본문#12",
+    "kbcard_rates_html#본문#10",
+    "kbcard_rates_html#본문#14",
+    "hanacard_std_2017#제20조#1",
+    "hanacard_std_2017#제18조#1"
+   ],
+   "recall@1": 0.0,
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0
+  },
+  {
+   "id": "S23",
+   "type": "표수치형",
+   "answerable": true,
+   "n_gold": 1,
+   "n_retrieved": 8,
+   "mrr": 1.0,
+   "latency_ms": 10016.1,
+   "top_chunk": "woorisb_rotating_html#본문#3",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "woorisb_rotating_html#본문#3",
+    "woorisb_rotating_html#본문#1",
+    "nh_jangbyeong_2026#본문#3",
+    "woorisb_rotating_html#본문#2",
+    "woorisb_rotating_html#본문#5",
+    "nh_jangbyeong_2026#본문#4",
+    "shinhan_orakssil_2025#본문#2",
+    "shinhan_orakssil_2025#본문#3"
+   ],
+   "recall@1": 1.0,
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0
+  },
+  {
+   "id": "S24",
+   "type": "표수치형",
+   "answerable": true,
+   "n_gold": 3,
+   "n_retrieved": 8,
+   "mrr": 1.0,
+   "latency_ms": 11295.9,
+   "top_chunk": "kbcard_overseas_html#본문#20",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요.",
+    "계산 파라미터 추출은 LLM 키가 필요합니다."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "kbcard_overseas_html#본문#20",
+    "kbcard_overseas_html#본문#19",
+    "sc_card_std_2021#제27조#1",
+    "hanacard_std_2017#제27조#1",
+    "kbcard_rates_html#본문#1",
+    "hanacard_diff_2016#제26조#2",
+    "kbcard_rates_html#본문#12",
+    "kbcard_rates_html#본문#14"
+   ],
+   "recall@1": 1.0,
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0
+  },
+  {
+   "id": "S25",
+   "type": "표수치형",
+   "answerable": true,
+   "n_gold": 1,
+   "n_retrieved": 8,
+   "mrr": 1.0,
+   "latency_ms": 10133.9,
+   "top_chunk": "hana_household_loan_2014#본문#6",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요.",
+    "근거 문서의 심의필 유효기간이 지났습니다(2026-09-30). 현행 조건은 다를 수 있습니다.",
+    "계산 파라미터 추출은 LLM 키가 필요합니다."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "hana_household_loan_2014#본문#6",
+    "sf_realestate_loan_2026#본문#16",
+    "im_household_2025#본문#16",
+    "im_mortgage_2024#본문#14",
+    "im_household_2025#본문#15",
+    "sc_card_std_2021#제27조#2",
+    "hana_household_loan_2014#본문#8",
+    "hana_household_loan_2014#본문#10"
+   ],
+   "recall@1": 1.0,
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0
+  },
+  {
+   "id": "S26",
+   "type": "복합형",
+   "answerable": true,
+   "n_gold": 1,
+   "n_retrieved": 8,
+   "mrr": 0.0,
+   "latency_ms": 9528.6,
+   "top_chunk": "hanacard_diff_2016#제10조#1",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "hanacard_diff_2016#제10조#1",
+    "hanacard_std_2017#제7조의2#1",
+    "hanacard_diff_2016#제7조의2#1",
+    "hanacard_diff_2016#제10조#2",
+    "hanacard_std_2017#제10조#1",
+    "sc_card_std_2021#제7조의2#1",
+    "hanacard_diff_2016#제7조#1",
+    "sc_card_std_2021#제10조#1"
+   ],
+   "recall@1": 0.0,
+   "recall@3": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0
+  },
+  {
+   "id": "S27",
+   "type": "복합형",
+   "answerable": true,
+   "n_gold": 2,
+   "n_retrieved": 8,
+   "mrr": 0.14285714285714285,
+   "latency_ms": 10023.5,
+   "top_chunk": "hanacard_std_2017#제39조#1",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "hanacard_std_2017#제39조#1",
+    "sc_card_std_2021#제39조#1",
+    "sc_card_std_2021#제2조#1",
+    "hanacard_std_2017#제2조#1",
+    "sc_card_std_2021#제30조#1",
+    "hanacard_std_2017#제30조#1",
+    "hanacard_std_2017#제5조#1",
+    "sc_card_std_2021#제3조의2#1"
+   ],
+   "recall@1": 0.0,
+   "recall@3": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 1.0
+  },
+  {
+   "id": "S28",
+   "type": "복합형",
+   "answerable": true,
+   "n_gold": 1,
+   "n_retrieved": 8,
+   "mrr": 0.0,
+   "latency_ms": 10420.5,
+   "top_chunk": "db_silson_2101#본문#11",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요.",
+    "계산 파라미터 추출은 LLM 키가 필요합니다."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "db_silson_2101#본문#11",
+    "knia_7000#제2조#17",
+    "knia_7000#제4조#9",
+    "knia_7000#제1조#8",
+    "knia_7000#제3조#38",
+    "knia_7000#본문#4",
+    "knia_7000#제3조#9",
+    "db_silson_2101#제42조#4"
+   ],
+   "recall@1": 0.0,
+   "recall@3": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0
+  },
+  {
+   "id": "S29",
+   "type": "복합형",
+   "answerable": true,
+   "n_gold": 1,
+   "n_retrieved": 8,
+   "mrr": 0.0,
+   "latency_ms": 11968.5,
+   "top_chunk": "sf_silson_2605#제10조#7",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요.",
+    "계산 파라미터 추출은 LLM 키가 필요합니다."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "sf_silson_2605#제10조#7",
+    "law_silson_std_pdf#제42조#30",
+    "law_silson_std_pdf#제4조#8",
+    "sf_silson_2605#제55조#5",
+    "sf_silson_2605#제4조#8",
+    "sonsa_silson_std_2024#제18조#1",
+    "sf_silson_2605#제3조#9",
+    "sf_silson_2605#제10조#3"
+   ],
+   "recall@1": 0.0,
+   "recall@3": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0
+  },
+  {
+   "id": "S30",
+   "type": "복합형",
+   "answerable": true,
+   "n_gold": 2,
+   "n_retrieved": 8,
+   "mrr": 1.0,
+   "latency_ms": 9866.5,
+   "top_chunk": "hana_mortgage_2025#본문#27",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요.",
+    "계산 파라미터 추출은 LLM 키가 필요합니다."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "hana_mortgage_2025#본문#27",
+    "hana_mortgage_2025#본문#5",
+    "hana_mortgage_2025#본문#2",
+    "hana_mortgage_2025#본문#24",
+    "hana_mortgage_2025#본문#19",
+    "hana_mortgage_2025#본문#41",
+    "hana_mortgage_2025#본문#4",
+    "sf_realestate_loan_2026#본문#4"
+   ],
+   "recall@1": 1.0,
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0
+  },
+  {
+   "id": "S31",
+   "type": "계산형",
+   "answerable": true,
+   "n_gold": 1,
+   "n_retrieved": 8,
+   "mrr": 1.0,
+   "latency_ms": 9319.3,
+   "top_chunk": "nh_jangbyeong_2026#본문#3",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요.",
+    "계산 파라미터 추출은 LLM 키가 필요합니다."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "nh_jangbyeong_2026#본문#3",
+    "nh_jangbyeong_2026#본문#8",
+    "nh_jangbyeong_2026#본문#4",
+    "shinhan_orakssil_2025#본문#2",
+    "nh_jangbyeong_2026#본문#6",
+    "nh_jangbyeong_2026#본문#5",
+    "woorisb_rotating_html#본문#2",
+    "shinhan_orakssil_2025#본문#3"
+   ],
+   "recall@1": 1.0,
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0
+  },
+  {
+   "id": "S32",
+   "type": "계산형",
+   "answerable": true,
+   "n_gold": 2,
+   "n_retrieved": 8,
+   "mrr": 1.0,
+   "latency_ms": 10231.6,
+   "top_chunk": "hana_mortgage_2025#본문#5",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요.",
+    "근거 문서의 심의필 유효기간이 지났습니다(2026-09-30). 현행 조건은 다를 수 있습니다.",
+    "계산 파라미터 추출은 LLM 키가 필요합니다."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "hana_mortgage_2025#본문#5",
+    "hana_mortgage_2025#본문#27",
+    "sf_realestate_loan_2026#본문#5",
+    "sf_realestate_loan_2026#본문#6",
+    "hana_mortgage_2025#본문#2",
+    "im_household_2025#본문#4",
+    "im_mortgage_2024#본문#4",
+    "im_household_2025#본문#3"
+   ],
+   "recall@1": 1.0,
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0
+  },
+  {
+   "id": "S33",
+   "type": "계산형",
+   "answerable": true,
+   "n_gold": 1,
+   "n_retrieved": 8,
+   "mrr": 1.0,
+   "latency_ms": 8913.8,
+   "top_chunk": "im_household_2025#본문#15",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요.",
+    "근거 문서의 심의필 유효기간이 지났습니다(2026-09-30). 현행 조건은 다를 수 있습니다.",
+    "계산 파라미터 추출은 LLM 키가 필요합니다."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "im_household_2025#본문#15",
+    "im_mortgage_2024#본문#14",
+    "im_household_2025#본문#16",
+    "hana_household_loan_2014#본문#6",
+    "hana_household_loan_2014#본문#7",
+    "hana_household_loan_2014#본문#8",
+    "sf_realestate_loan_2026#본문#17",
+    "im_household_2025#본문#2"
+   ],
+   "recall@1": 1.0,
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0
+  },
+  {
+   "id": "S34",
+   "type": "계산형",
+   "answerable": true,
+   "n_gold": 1,
+   "n_retrieved": 8,
+   "mrr": 1.0,
+   "latency_ms": 10281.3,
+   "top_chunk": "kbcard_overseas_html#본문#20",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요.",
+    "계산 파라미터 추출은 LLM 키가 필요합니다."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "kbcard_overseas_html#본문#20",
+    "kbcard_overseas_html#본문#19",
+    "hanacard_diff_2016#제26조#1",
+    "hanacard_diff_2016#제26조#2",
+    "kbcard_overseas_html#본문#1",
+    "kbcard_rates_html#본문#3",
+    "kbcard_overseas_html#본문#12",
+    "kbcard_rates_html#본문#12"
+   ],
+   "recall@1": 1.0,
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0
+  },
+  {
+   "id": "S35",
+   "type": "계산형",
+   "answerable": true,
+   "n_gold": 5,
+   "n_retrieved": 8,
+   "mrr": 0.0,
+   "latency_ms": 9950.1,
+   "top_chunk": "law_silson_std_pdf#제42조#8",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요.",
+    "계산 파라미터 추출은 LLM 키가 필요합니다."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "law_silson_std_pdf#제42조#8",
+    "sf_silson_2605#제3조#8",
+    "sonsa_silson_std_2024#제42조#4",
+    "sf_silson_2605#제3조#30",
+    "db_silson_2101#본문#12",
+    "law_silson_std_pdf#제5조#12",
+    "sf_silson_2605#제10조#3",
+    "law_silson_std_pdf#제5조#8"
+   ],
+   "recall@1": 0.0,
+   "recall@3": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0
+  },
+  {
+   "id": "S36",
+   "type": "유사상품비교형",
+   "answerable": true,
+   "n_gold": 29,
+   "n_retrieved": 8,
+   "mrr": 1.0,
+   "latency_ms": 9321.9,
+   "top_chunk": "sf_silson_2605#제10조#3",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요.",
+    "계산 파라미터 추출은 LLM 키가 필요합니다."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "sf_silson_2605#제10조#3",
+    "law_silson_std_pdf#제42조#8",
+    "sf_silson_2605#제3조#13",
+    "law_silson_std_pdf#제3조#22",
+    "sf_silson_2605#제3조#8",
+    "sonsa_silson_std_2024#제42조#4",
+    "law_silson_std_pdf#제42조#19",
+    "law_silson_std_pdf#제5조#8"
+   ],
+   "recall@1": 1.0,
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0
+  },
+  {
+   "id": "S37",
+   "type": "유사상품비교형",
+   "answerable": true,
+   "n_gold": 2,
+   "n_retrieved": 8,
+   "mrr": 1.0,
+   "latency_ms": 9361.6,
+   "top_chunk": "sc_card_std_2021#제31조#1",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요.",
+    "계산 파라미터 추출은 LLM 키가 필요합니다."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "sc_card_std_2021#제31조#1",
+    "hanacard_std_2017#제31조#1",
+    "hanacard_std_2017#제35조#1",
+    "sc_card_std_2021#제32조#1",
+    "hanacard_std_2017#제36조#1",
+    "sc_card_std_2021#제35조#1",
+    "hanacard_std_2017#제32조#1",
+    "hanacard_diff_2016#제34조#2"
+   ],
+   "recall@1": 1.0,
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0
+  },
+  {
+   "id": "S38",
+   "type": "유사상품비교형",
+   "answerable": true,
+   "n_gold": 3,
+   "n_retrieved": 8,
+   "mrr": 0.3333333333333333,
+   "latency_ms": 9551.1,
+   "top_chunk": "hana_credit_terms_2024_table#제7조#2",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "hana_credit_terms_2024_table#제7조#2",
+    "hana_credit_terms_2024#제7조#3",
+    "hana_credit_terms_2024#제7조#1",
+    "hana_credit_terms_2024#제8조#1",
+    "hana_credit_terms_2024_table#제7조#1",
+    "hana_credit_terms_2013#제8조#1",
+    "hana_credit_terms_2009#제8조#1",
+    "sc_card_std_2021#제29조#1"
+   ],
+   "recall@1": 0.0,
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0
+  },
+  {
+   "id": "S39",
+   "type": "미답변형",
+   "answerable": false,
+   "n_gold": 1,
+   "n_retrieved": 8,
+   "mrr": 0.0,
+   "latency_ms": 9375.5,
+   "top_chunk": "knia_7000#제18조#2",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요.",
+    "계산 파라미터 추출은 LLM 키가 필요합니다."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "knia_7000#제18조#2",
+    "law_silson_std_pdf#제32조#1",
+    "law_silson_std_pdf#제34조#6",
+    "sf_silson_2605#제35조#3",
+    "law_silson_std_pdf#제34조#7",
+    "sonsa_silson_std_2024#제34조#2",
+    "db_silson_2101#제12조#18",
+    "db_silson_2101#제12조#20"
+   ],
+   "recall@1": 0.0,
+   "recall@3": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0
+  },
+  {
+   "id": "S40",
+   "type": "미답변형",
+   "answerable": false,
+   "n_gold": 1,
+   "n_retrieved": 8,
+   "mrr": 0.0,
+   "latency_ms": 9937.4,
+   "top_chunk": "im_mortgage_2024#본문#4",
+   "answered": true,
+   "answer": "[가짜 LLM] 키가 설정되지 않아 답변을 생성하지 않았습니다. 검색된 근거만 확인하세요.",
+   "grade": "sufficient",
+   "retry_count": 0,
+   "trace": [
+    "preprocess",
+    "rewrite",
+    "selfquery",
+    "retrieve",
+    "grade",
+    "calc",
+    "answer"
+   ],
+   "notices": [
+    "이 답변은 AI가 검색된 문서를 근거로 생성했습니다. 최종 확인은 원문과 상담 창구를 통해 주세요.",
+    "근거 문서의 심의필 유효기간이 지났습니다(2026-09-30). 현행 조건은 다를 수 있습니다.",
+    "계산 파라미터 추출은 LLM 키가 필요합니다."
+   ],
+   "filters": {
+    "doc_type": null,
+    "issuer": null,
+    "product": null,
+    "generation": null,
+    "effective_on": null,
+    "exclude_synthetic": true
+   },
+   "usage": {},
+   "chunk_ids": [
+    "im_mortgage_2024#본문#4",
+    "sf_realestate_loan_2026#본문#4",
+    "im_household_2025#본문#3",
+    "sf_realestate_loan_2026#본문#6",
+    "im_household_2025#본문#4",
+    "hana_household_loan_2014#본문#1",
+    "im_household_2025#본문#2",
+    "hana_household_loan_2014#본문#5"
+   ],
+   "recall@1": 0.0,
+   "recall@3": 0.0,
+   "recall@5": 0.0,
+   "recall@10": 0.0
+  }
+ ],
+ "warning": "LLM 키가 없어 가짜 모델로 실행했습니다. 검색 지표(Recall·MRR)는 유효하지만 답변률·오거절률·미답변 정확도는 의미가 없습니다."
+}

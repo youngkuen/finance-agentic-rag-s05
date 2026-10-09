@@ -1,0 +1,28 @@
+{
+ "session": 5,
+ "generated_at": "2026-10-09T14:32:11+00:00",
+ "passed": 5,
+ "total": 5,
+ "checks": {
+  "계산 골든 테스트": {
+   "ok": true,
+   "detail": "32 passed in 0.06s"
+  },
+  "agentic.json 존재": {
+   "ok": true,
+   "detail": "40문항 (가짜 모델)"
+  },
+  "미답변형 거절 기록": {
+   "ok": true,
+   "detail": "미답변 정확도 0.0, 오거절률 0.0, 답변률 1.0"
+  },
+  "적대적 5문항 기록": {
+   "ok": true,
+   "detail": "통과 0.2"
+  },
+  "에이전트 정책 문서": {
+   "ok": true,
+   "detail": "3,274자"
+  }
+ }
+}
